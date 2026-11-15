@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/logo.svg" width="128" alt="Battride War English patch logo"></p>
+<p align="center"><img src="docs/screenshots/main-menu.jpg" width="720" alt="The main menu in English, running in shadPS4"></p>
 
 <h1 align="center">Kamen Rider Battride War Genesis: English patch</h1>
 
@@ -34,6 +34,29 @@ files of your own dump.
 
 It is made for the **shadPS4** emulator and for a dump you made yourself from a disc or purchase you own. It is not for jailbroken consoles and
 must not be used for piracy. Do not ask for game files, and do not share them in issues.
+
+## Screenshots
+
+Single frames from a patched build running in shadPS4 0.21.0 on macOS, not a full playthrough.
+
+<table>
+  <tr>
+    <td><img src="docs/screenshots/loading-tips.jpg" alt="Loading screen with the rider's description in English"></td>
+    <td><img src="docs/screenshots/tutorial.jpg" alt="Tutorial box: Basic Actions, Normal Attack, Special Move"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Loading screen with the rider's description</sub></td>
+    <td align="center"><sub>Tutorial: basic actions</sub></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/mission-combat.jpg" alt="Mission: redrawn HUD (100 to defeat, Defeated, COMBO) and partner banter"></td>
+    <td><img src="docs/screenshots/mission-dialogue.jpg" alt="Mission: Den-O speaking, in English"></td>
+  </tr>
+  <tr>
+    <td align="center"><sub>Mission: redrawn HUD labels and partner banter</sub></td>
+    <td align="center"><sub>Mission: in-mission dialogue</sub></td>
+  </tr>
+</table>
 
 ## Status
 
