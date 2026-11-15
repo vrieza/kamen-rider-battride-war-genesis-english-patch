@@ -9,6 +9,10 @@ This repository contains no game data, only binary patches against your own file
 
 Download: the zip `battride-war-genesis-english-v0.4.0-preview.zip` on the Releases page of this repository.
 
+## How this translation was made
+
+Every English line was drafted by AI language models (Anthropic Claude) and then read again against the Japanese by a second AI edit pass. The tools, the glossary and the texture redraws were also made with AI agents, directed by the human maintainer. No human has proofread the whole text, and no human has played through it. Names follow the official English spelling where one exists; the rest is romanized. Mistakes in meaning, tone and names are therefore possible, and corrections are welcome (see "Report a problem").
+
 ## What's translated
 
 - Menus and system messages
@@ -21,6 +25,27 @@ Download: the zip `battride-war-genesis-english-v0.4.0-preview.zip` on the Relea
 - Credits and music lists, as a first draft only: some name readings are unsure
 
 Not translated: the movies (their Japanese is part of the video), the trophies, and the text inside the game executable.
+
+## Progress
+
+| Version | What | State |
+|---|---|---|
+| v0.1 | Menus, system text, names and labels | Translated, edit-passed, in this release |
+| v0.2 | Story mode (mission info, briefings, in-mission dialogue, cutscene text) | Translated, edit-passed, in this release |
+| v0.3 | Items, skills, shop, figures, character info | Translated, edit-passed, in this release |
+| v0.4 | Battle voice lines | Translated, edit-passed, in this release |
+| v1.0 | Credits and music lists | First draft, edit pass not done (the draft is already in this release) |
+
+"Edit-passed" means read by the second AI pass against the Japanese. It does not mean checked in game.
+
+In numbers: 27,836 of 28,258 translated text cells (98.5%) have had the edit pass; the other 422 are the credits and music draft. 179 textures were redrawn in English. The glossary of fixed names and terms has 1,046 entries.
+
+## What's next
+
+1. Edit pass of the credits and music lists, then v1.0.
+2. Checks in the running game that need players: text box sizes, the encrypted tables, whether battle voice lines are read from the character archives, and the redrawn textures (see "Known issues").
+3. Not planned for now: the movies, the trophies, the text inside the executable.
+4. A simpler way to apply the patch is being looked at.
 
 ## How to apply
 
@@ -69,6 +94,6 @@ Never attach game files.
 
 ## Licence and credits
 
-- Translation text: CC BY-NC-SA 4.0.
-- The apply script: MIT.
+- The `LICENSE` file (MIT) covers the apply script and this README.
+- The translation text and the redrawn labels inside the patches are CC BY-NC-SA 4.0.
 - The game, its names and its artwork belong to their owners. This project is not affiliated with them. The English labels in the redrawn textures are drawn with the Roboto font (SIL Open Font License 1.1, Copyright 2011 The Roboto Project Authors). The game's own font is not changed.
