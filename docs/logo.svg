@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Battride War English patch logo">
+  <rect width="256" height="256" rx="48" fill="#1b2740"/>
+  <circle cx="128" cy="128" r="88" fill="none" stroke="#e95420" stroke-width="10"/>
+  <circle cx="128" cy="128" r="64" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.35"/>
+  <text x="128" y="152" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="76" font-weight="700" fill="#ffffff">EN</text>
+  <text x="128" y="190" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="6" fill="#e95420">PS4</text>
+</svg>
