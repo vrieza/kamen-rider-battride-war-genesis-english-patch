@@ -5,9 +5,33 @@ before publishing) and `### Known issues` (only what is new or changed; the full
 Every build is a **preview** and is not verified in game. The version label is `vMAJOR.MINOR.PATCH-preview`: MINOR rises when a
 domain of text is added, PATCH for fixes and for changes to the apply script.
 
-## Planned
+## 0.4.2
 
-- **English patch for app v01.02**, the official update (cumulative, includes 01.01; adds three riders). It will be a delta next to the v01.00 patch; the v01.00 patch does not fit v01.02 and its apply script refuses that version. Planned, not started.
+Executable text, and a second download for app v01.02.
+
+### Changes
+
+- **Text inside the game executable (`eboot.bin`).** Result screen, Rider Soul panel and popup, mission confirm dialog, HUD Shift Car and
+  form names, pause Continue/Quit: 481 strings, written in place through the `-mods` overlay. The kit now also patches `eboot.bin`.
+- **App v01.02 kit** (`v0.4.2-preview-v102`), a separate download for the official update (cumulative, includes 01.01). It carries the
+  v01.00 translation (29,088 unchanged rows) plus about 700 new or changed lines for the three DLC riders (Chaser, Ghost Toucon Boost,
+  Specter), 16 new glossary terms, two redrawn menu images, three new name plates, and the executable text moved onto the v01.02
+  `eboot.bin` (plus one new string). Each kit refuses the other app version.
+
+### Tested
+
+- Unit tests pass; lint 0 errors; the executable rows check with 0 problems against each version's `eboot.bin`.
+- App v01.00, in game on shadPS4 0.21.0 (run directly): Drive, Kuuga and Agito missions to the result screen, pause menu used, no crash;
+  HUD names in English.
+- App v01.02: automated start to the title screen only (app version 01.02, English title, patched `eboot.bin` loaded from `-mods`).
+- Each zip was unpacked and applied to a clean dump; the result is byte for byte the tested build.
+
+### Known issues
+
+- **The v01.02 DLC riders were not tested.** The maintainer could not get a DLC dump to unlock them, so none of their text has been seen
+  in game. Reports from DLC owners are welcome.
+- Not every executable string has been seen on screen.
+- Saves made on v01.02 may not load on v01.00 (the update's own note).
 
 ## 0.4.1
 

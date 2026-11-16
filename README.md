@@ -20,13 +20,19 @@
   <a href="https://github.com/vrieza/kamen-rider-battride-war-genesis-english-patch/issues">Issues</a>
 </p>
 
-> **Preview v0.4.1. Not verified in game.**
-> The only test of this build is an automated start to the title screen in shadPS4 0.21.0.
+> **Preview v0.4.2. Not verified in game as a whole.**
+> A few missions were played in shadPS4 0.21.0 on app v01.00; the rest was checked by tests and an automated start to the title screen.
 > Expect text that overflows its box, wrong line breaks and screens nobody has looked at.
 
-> **Game version: this patch is for app v01.00 only.** An English patch for the official update, **app v01.02**, is planned, not started. The update
-> adds three new riders and changes some text and UI files, so the v01.00 patch does not fit it: `apply_kit.py` refuses any other game version
-> and writes nothing. Stay on v01.00 for now. Most of the v01.00 translation carries over to v01.02 (914 of 925 text tables are unchanged).
+> **Game version: there are two downloads, one per app version.** Pick the one that matches your dump:
+> - `battride-war-genesis-english-v0.4.2-preview.zip` for **app v01.00** (the disc/base version).
+> - `battride-war-genesis-english-v0.4.2-preview-v102.zip` for **app v01.02** (the official update, cumulative, includes 01.01; adds three DLC riders).
+>
+> Each apply script checks every original file and refuses the other version, writing nothing.
+
+> **v01.02 and the DLC riders: untested.** The three riders the update adds (Chaser, Ghost Toucon Boost, Specter) are paid DLC. Their text
+> (about 700 lines) is translated, but nobody has seen it in game: the maintainer has no DLC dump to test with. The v01.02 build was only started
+> to the title screen. Reports from players who own the DLC are especially welcome.
 
 The patch turns the Japanese game's text into English: menus, names, story mode, items, shop, figures and battle voice lines, plus 179 redrawn
 textures. It needs your own copy of the game: nothing of the game is in this repository or in its releases, only binary patches against the
@@ -76,6 +82,8 @@ Early preview, first public builds. On 2026-11-15:
 | v0.3 | Items, skills, shop, figures, character info | Translated, edit-passed, in this release |
 | v0.4 | Battle voice lines | Translated, edit-passed, in this release |
 | v1.0 | Credits and music lists | First draft, edit pass not done (the draft is already in this release) |
+| v0.4.2 | Text inside the game executable (`eboot.bin`): result screen, Rider Soul panel, confirm dialogs, HUD names | Translated, reviewed, in this release |
+| v0.4.2-v102 | App v01.02: new and changed text for the three DLC riders, two redrawn menu images, three name plates | Translated, edit-passed, not seen in game |
 
 "Edit-passed" means read by a second AI pass against the Japanese. It does not mean checked in game.
 
@@ -84,8 +92,8 @@ Early preview, first public builds. On 2026-11-15:
 1. Edit pass of the credits and music lists, then v1.0.
 2. Checks in the running game that need players: text box sizes, the encrypted tables, whether battle voice lines are read from the character
    archives, and the redrawn textures (see [Known issues](#known-issues)).
-3. An English patch for app v01.02 (the official update), kept as a delta next to the v01.00 patch. Planned, not started.
-4. Not planned for now: the movies, the trophies, the text inside the executable.
+3. Checks of the v01.02 DLC riders in game (needs a DLC owner).
+4. Not planned for now: the movies and the trophies.
 
 ## What's translated
 
@@ -100,18 +108,20 @@ Early preview, first public builds. On 2026-11-15:
 | 179 redrawn menu and HUD textures (labels baked into pictures) | Redrawn |
 | Credits and music lists | First draft |
 | Movies (their Japanese is part of the video) | Not translated |
-| Trophies and text inside the game executable | Not translated |
+| Text inside the game executable (`eboot.bin`) | Translated (481 strings; one more on v01.02) |
+| Trophies | Not translated |
 
 Names follow the official English spelling where one exists; the rest is romanized.
 
 ## How to apply
 
-What you need: your own dump of the game (PS4 `CUSA02716`, Japanese, app version 01.00, unmodified), already **extracted into a folder** that
+What you need: your own dump of the game (PS4 `CUSA02716`, Japanese, app version 01.00 or 01.02, unmodified), already **extracted into a folder** that
 contains `nativeORBIS/` and `sce_sys/`. The patch does not extract the package for you; shadPS4 itself runs games only from an extracted
 folder, so this is the same folder you already start the game from. A game that is already patched, another version or a repacked dump is refused.
 
-1. Download the zip `battride-war-genesis-english-v0.4.1-preview.zip` from [Releases](https://github.com/vrieza/kamen-rider-battride-war-genesis-english-patch/releases) and unzip it. It unpacks into one folder named
-   `battride-war-genesis-english-v0.4.1-preview`. Open a terminal and `cd` into it; steps 3 and 4 run from inside it.
+1. Download the zip for your app version from [Releases](https://github.com/vrieza/kamen-rider-battride-war-genesis-english-patch/releases):
+   `battride-war-genesis-english-v0.4.2-preview.zip` (app v01.00) or `battride-war-genesis-english-v0.4.2-preview-v102.zip` (app v01.02), and
+   unzip it. It unpacks into one folder with the same name as the zip. Open a terminal and `cd` into it; steps 3 and 4 run from inside it.
 2. Install Python 3.8 or newer. Nothing else is needed: no xdelta3, no extra packages. On macOS the `python3` that comes with the Command Line
    Tools works. Tested with Python 3.9, 3.12, 3.14 and 3.15 on macOS; Python 3.8 itself and Windows were not tested.
 3. Optional check that the download is intact: `shasum -a 256 -c SHA256SUMS`. Every line should say `OK`.
@@ -172,7 +182,10 @@ Result SHA-256: `2f48ae50a5c501e71a615fa989343f5369ccc761a33092fd4f5613e489218c0
 - Battle voice lines may still show Japanese if the game reads other copies of those lines stored in the character archives.
 - Apart from the early test build's one button and three HUD labels, the 179 redrawn textures have never been seen in game. The vertical
   objective captions and the two Rider Road banner halves are the riskiest.
-- Movies, trophies and executable text stay Japanese.
+- Movies and trophies stay Japanese.
+- Executable text: only part of the 481 strings was seen on screen (result screen, HUD Shift Car and form names). Use shadPS4 directly; an
+  emulator profile launched through ES-DE crashed about 2 minutes in, with or without this patch.
+- App v01.02: the DLC riders' text has never been seen in game (no DLC dump for testing). Saves made on v01.02 may not load on v01.00.
 - Credits and music lists are a first draft. About 60 credit lines have unsure name readings.
 - Some descriptions address the player as "you" and some do not; the style is not unified yet. A few descriptions lack the blank line between paragraphs.
 
@@ -189,7 +202,7 @@ text, and no human has played through it. Mistakes in meaning, tone and names ar
 - a screenshot,
 - where in the game it is (which menu or mission),
 - what the text should say,
-- the version label: `v0.4.1-preview`.
+- the version label: `v0.4.2-preview` or `v0.4.2-preview-v102`.
 
 Never attach game files.
 
