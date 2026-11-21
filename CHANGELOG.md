@@ -2,8 +2,28 @@
 
 Each version's section is that release's notes. A section has a summary paragraph, `### Changes`, `### Tested` (what was run
 before publishing) and `### Known issues` (only what is new or changed; the full list is in the [README](README.md#known-issues)).
-Every build is a **preview** and is not verified in game. The version label is `vMAJOR.MINOR.PATCH-preview`: MINOR rises when a
+Builds up to 0.4.2 were previews. From 1.0.0 the version label is `vMAJOR.MINOR.PATCH` (no `-preview`): MINOR rises when a
 domain of text is added, PATCH for fixes and for changes to the apply script.
+
+## 1.0.0 (2026-11-21)
+
+First full release; the `-preview` label is dropped. Same translation as 0.4.2 for both app versions (v01.00 and v01.02), plus optional extras in both zips.
+
+### Changes
+
+- **`extras/dlc`**: static files that unlock all nine DLC add-ons on shadPS4 without a DLC dump (a `param.sfo` and an empty placeholder for each: Specter, Ghost Toucon Boost, Chaser, Hongo Shocker Combatman and five figure packs). Copy `extras/dlc/addcont` into the shadPS4 user folder.
+- **`extras/60fps`**: a patch of `sysConf.boot` (frame cap 30.0 to 60.0), applied with `python3 apply_kit.py <game> --60fps`. Off by default.
+- `install.md` explains both.
+
+### Tested
+
+- Unit tests pass; each zip unpacks, its `SHA256SUMS` match and `apply_kit.py` reproduces the built files on a clean dump; the v01.02 kit refuses a v01.00 dump.
+- In game by the maintainer on shadPS4 0.21.0: the DLC unlock (all nine add-ons, the three DLC riders in missions) and 60 fps worked.
+
+### Known issues
+
+- Two figure-pack labels (`...02`, `...05`) use guessed ids.
+- Everything else in the README's Known issues still applies (not every screen checked, credits draft, movies and trophies Japanese).
 
 ## 0.4.2
 

@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/vrieza/kamen-rider-battride-war-genesis-english-patch/releases/latest"><img src="https://img.shields.io/badge/%E2%AC%87_Download-latest_preview-e95420?style=for-the-badge&labelColor=1b2740" alt="Download the latest preview"></a>
+  <a href="https://github.com/vrieza/kamen-rider-battride-war-genesis-english-patch/releases/latest"><img src="https://img.shields.io/badge/%E2%AC%87_Download-latest-e95420?style=for-the-badge&labelColor=1b2740" alt="Download the latest release"></a>
   <a href="#how-to-apply"><img src="https://img.shields.io/badge/How_to-apply_the_patch-0078d6?style=for-the-badge&labelColor=1b2740" alt="How to apply the patch"></a>
   <a href="https://github.com/vrieza/kamen-rider-battride-war-genesis-english-patch/issues/new"><img src="https://img.shields.io/badge/Report-a_text_problem-8957e5?style=for-the-badge&labelColor=1b2740" alt="Report a text problem"></a>
 </p>
@@ -20,19 +20,18 @@
   <a href="https://github.com/vrieza/kamen-rider-battride-war-genesis-english-patch/issues">Issues</a>
 </p>
 
-> **Preview v0.4.2. Not verified in game as a whole.**
-> A few missions were played in shadPS4 0.21.0 on app v01.00; the rest was checked by tests and an automated start to the title screen.
-> Expect text that overflows its box, wrong line breaks and screens nobody has looked at.
+> **v1.0.0.** The maintainer played this version in game on shadPS4 0.21.0: menus, missions, the DLC riders and 60 fps worked.
+> Not every screen has been checked, so some text may overflow its box or break at the wrong place.
 
 > **Game version: there are two downloads, one per app version.** Pick the one that matches your dump:
-> - `battride-war-genesis-english-v0.4.2-preview.zip` for **app v01.00** (the disc/base version).
-> - `battride-war-genesis-english-v0.4.2-preview-v102.zip` for **app v01.02** (the official update, cumulative, includes 01.01; adds three DLC riders).
+> - `battride-war-genesis-english-v1.0.0.zip` for **app v01.00** (the disc/base version).
+> - `battride-war-genesis-english-v1.0.0-v102.zip` for **app v01.02** (the official update, cumulative, includes 01.01; adds three DLC riders).
 >
 > Each apply script checks every original file and refuses the other version, writing nothing.
 
-> **v01.02 and the DLC riders: untested.** The three riders the update adds (Chaser, Ghost Toucon Boost, Specter) are paid DLC. Their text
-> (about 700 lines) is translated, but nobody has seen it in game: the maintainer has no DLC dump to test with. The v01.02 build was only started
-> to the title screen. Reports from players who own the DLC are especially welcome.
+> **v01.02 and the DLC riders.** The three riders the update adds (Chaser, Ghost Toucon Boost, Specter) are paid DLC. Their text (about 700
+> lines) is translated. Each kit has an optional `extras/dlc` folder that unlocks all DLC on shadPS4 without a DLC dump (see [Optional extras](#optional-extras)).
+> The maintainer played the DLC riders in missions with it and it worked.
 
 The patch turns the Japanese game's text into English: menus, names, story mode, items, shop, figures and battle voice lines, plus 179 redrawn
 textures. It needs your own copy of the game: nothing of the game is in this repository or in its releases, only binary patches against the
@@ -66,14 +65,13 @@ Single frames from a patched build running in shadPS4 0.21.0 on macOS, not a ful
 
 ## Status
 
-Early preview, first public builds. On 2026-11-15:
+Release 1.0.0, 2026-11-21:
 
 - All text of v0.1 to v0.4 is translated and has had a second, full edit pass against the Japanese (see [how it was made](#how-it-was-made)).
-- Credits and music lists (v1.0) are a first draft: some name readings are unsure.
+- Credits and music lists are a first draft: some name readings are unsure.
 - 27,836 of 28,258 text cells (98.5%) are edit-passed. The other 422 are the credits and music draft.
 - 179 textures are redrawn in English. The glossary of fixed names and terms has 1,046 entries.
-- Nobody has played through the English. The only look at the game was an early test build: the save-data prompt, one redrawn button and three
-  HUD labels (`100 to defeat!`, `Now 0 Defeated!`, `COMBO`) showed in English.
+- The maintainer played the English in game on shadPS4 0.21.0 (menus, missions, the DLC riders). Nobody has checked every screen.
 
 | Version | What | State |
 |---|---|---|
@@ -81,19 +79,18 @@ Early preview, first public builds. On 2026-11-15:
 | v0.2 | Story mode: mission info, briefings, in-mission dialogue, cutscene text | Translated, edit-passed, in this release |
 | v0.3 | Items, skills, shop, figures, character info | Translated, edit-passed, in this release |
 | v0.4 | Battle voice lines | Translated, edit-passed, in this release |
-| v1.0 | Credits and music lists | First draft, edit pass not done (the draft is already in this release) |
+| Credits | Credits and music lists | First draft, edit pass not done (the draft is already in this release) |
 | v0.4.2 | Text inside the game executable (`eboot.bin`): result screen, Rider Soul panel, confirm dialogs, HUD names | Translated, reviewed, in this release |
-| v0.4.2-v102 | App v01.02: new and changed text for the three DLC riders, two redrawn menu images, three name plates | Translated, edit-passed, not seen in game |
+| v0.4.2-v102 | App v01.02: new and changed text for the three DLC riders, two redrawn menu images, three name plates | Translated, edit-passed, DLC riders played in game |
 
 "Edit-passed" means read by a second AI pass against the Japanese. It does not mean checked in game.
 
 **What's next:**
 
-1. Edit pass of the credits and music lists, then v1.0.
+1. Edit pass of the credits and music lists.
 2. Checks in the running game that need players: text box sizes, the encrypted tables, whether battle voice lines are read from the character
    archives, and the redrawn textures (see [Known issues](#known-issues)).
-3. Checks of the v01.02 DLC riders in game (needs a DLC owner).
-4. Not planned for now: the movies and the trophies.
+3. Not planned for now: the movies and the trophies.
 
 ## What's translated
 
@@ -120,7 +117,7 @@ contains `nativeORBIS/` and `sce_sys/`. The patch does not extract the package f
 folder, so this is the same folder you already start the game from. A game that is already patched, another version or a repacked dump is refused.
 
 1. Download the zip for your app version from [Releases](https://github.com/vrieza/kamen-rider-battride-war-genesis-english-patch/releases):
-   `battride-war-genesis-english-v0.4.2-preview.zip` (app v01.00) or `battride-war-genesis-english-v0.4.2-preview-v102.zip` (app v01.02), and
+   `battride-war-genesis-english-v1.0.0.zip` (app v01.00) or `battride-war-genesis-english-v1.0.0-v102.zip` (app v01.02), and
    unzip it. It unpacks into one folder with the same name as the zip. Open a terminal and `cd` into it; steps 3 and 4 run from inside it.
 2. Install Python 3.8 or newer. Nothing else is needed: no xdelta3, no extra packages. On macOS the `python3` that comes with the Command Line
    Tools works. Tested with Python 3.9, 3.12, 3.14 and 3.15 on macOS; Python 3.8 itself and Windows were not tested.
@@ -157,26 +154,33 @@ Recommended settings (what we use, in shadPS4's `user/config.json`; not required
 
 Back up `config.json` before editing it. These values were tuned on one Mac only.
 
-## Optional: 60 fps
+## Optional extras
 
-The game runs at 30 fps. A community 60 fps patch (made for the PS3 version) changes one number in `nativeORBIS/system/sysConf.boot`; the PS4
-file has the same layout. It is **not** in the kit. To add it after step 4, run this from any folder (it copies the original file into your
-`-mods` folder and writes 60.0 at offset 0x14):
+Each zip has an `extras/` folder. Both extras are optional and hold no game data.
+
+### 60 fps
+
+The game runs at 30 fps. The extra changes one number in `nativeORBIS/system/sysConf.boot` (30.0 to 60.0). Apply it with the same script:
 
 ```
-python3 -c "import os,shutil,sys;g=sys.argv[1].rstrip('/');f='/nativeORBIS/system/sysConf.boot';m=g+'-mods'+f;os.makedirs(os.path.dirname(m),exist_ok=True);shutil.copy(g+f,m);h=open(m,'r+b');h.seek(0x14);h.write(bytes.fromhex('00007042'));h.close()" /path/to/CUSA02716
+python3 apply_kit.py /path/to/CUSA02716 --60fps
 ```
 
-Result SHA-256: `2f48ae50a5c501e71a615fa989343f5369ccc761a33092fd4f5613e489218c03`. To undo, delete `CUSA02716-mods/nativeORBIS/system/sysConf.boot`.
+Tested in game by the maintainer on shadPS4 0.21.0 (Apple M4). It needs a machine that can run the game at 60. An early test build in 2026-11-12 saw enemies fail to spawn at 60 fps in missions; the maintainer's test of 1.0.0 did not, but if a mission stalls, run the script again without `--60fps`.
 
-> **Warning:** in our tests the loading screen went from 22 to 57 fps, but in missions **enemies may fail to spawn at 60 fps** (they did spawn
-> at 30). The game logic may be tied to the frame rate. Use it at your own risk and remove it if a mission stalls.
+### Unlock the DLC (shadPS4)
+
+The three DLC riders, the Hongo bonus and the figure packs are locked without the DLC. `extras/dlc/` holds a `param.sfo` and an empty placeholder file for each of the nine add-ons, which is what shadPS4 needs to treat them as owned.
+
+1. Find the user folder your shadPS4 uses (it holds `addcont/`, `home/` and `log/`). Quit shadPS4.
+2. Copy `extras/dlc/addcont/` into it. You get `<user folder>/addcont/CUSA02714/0000000000000000/` to `.../0000000000000008/` (the folder is `CUSA02714`, not `CUSA02716`).
+3. Start the game fresh and press O through the unlock popups. Keep all files in place.
+
+Tested in game by the maintainer on app v01.02: the popups, the roster entries and the DLC riders in missions. Labels `0000000000000002` and `0000000000000005` use guessed ids (the two figure packs with no public id). Full steps are in `install.md` inside the zip.
 
 ## Known issues
 
-- Nothing has been checked in game as a whole. This build was only started automatically to the title screen. An early test build (2026-11-12,
-  mostly texture redraws and one edited prompt, not this release) was looked at in game: see [Status](#status). The mission dialogue box was
-  still Japanese then. Nothing else was seen.
+- Not every screen has been checked in game. The maintainer played menus, missions and the DLC riders.
 - Text box sizes were never measured. Long names and lines may run past the box, be cut off or overlap.
 - Some text tables are encrypted in the game files. English that is longer than the Japanese has never been seen in game in those tables.
 - Battle voice lines may still show Japanese if the game reads other copies of those lines stored in the character archives.
@@ -185,7 +189,7 @@ Result SHA-256: `2f48ae50a5c501e71a615fa989343f5369ccc761a33092fd4f5613e489218c0
 - Movies and trophies stay Japanese.
 - Executable text: only part of the 481 strings was seen on screen (result screen, HUD Shift Car and form names). Use shadPS4 directly; an
   emulator profile launched through ES-DE crashed about 2 minutes in, with or without this patch.
-- App v01.02: the DLC riders' text has never been seen in game (no DLC dump for testing). Saves made on v01.02 may not load on v01.00.
+- App v01.02: saves made on v01.02 may not load on v01.00.
 - Credits and music lists are a first draft. About 60 credit lines have unsure name readings.
 - Some descriptions address the player as "you" and some do not; the style is not unified yet. A few descriptions lack the blank line between paragraphs.
 
@@ -202,7 +206,7 @@ text, and no human has played through it. Mistakes in meaning, tone and names ar
 - a screenshot,
 - where in the game it is (which menu or mission),
 - what the text should say,
-- the version label: `v0.4.2-preview` or `v0.4.2-preview-v102`.
+- the version label: `v1.0.0` or `v1.0.0-v102`.
 
 Never attach game files.
 
